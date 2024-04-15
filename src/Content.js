@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import CardNumber from 'components/card-number';
 import WhiteCircle from 'components/white-circle';
 import background from 'assets/background.svg';
 import benepassLogo from 'assets/benepass-logo.svg';
@@ -18,7 +17,7 @@ function Content() {
       <h2 className='mb-7 text-xl leading-8'>Used for pre-tax purchases</h2>
       
       <div
-        className='p-6 text-white flex flex-col justify-between mb-3 drop-shadow-lg bg-cover max-w-[392px] h-[272px] rounded-[20px] '
+        className='p-6 text-white flex flex-col justify-between mb-3 drop-shadow-lg bg-cover max-w-[392px] h-[272px] rounded-[20px]'
         style= {{backgroundImage: `url(${background})`}}
       >
         <div className='grid gap-4 sm:gap-6'>
@@ -29,7 +28,25 @@ function Content() {
             </div>
           </div>
           
-          <CardNumber isShowingDetails={isShowingDetails} cardNumberArray={cardNumberArray}/>
+          <div className="flex flex-wrap gap-2 items-center font-semibold leading-8 text-[26px]">
+            {isShowingDetails ? (
+              <>
+                {cardNumberArray.map((number, index) => (
+                  <div key={index}>{number}</div>
+                ))}
+              </>
+            ) : (
+              <>
+                <figure className="flex gap-1.5" aria-label='Hidden card number'>
+                  <WhiteCircle/>
+                  <WhiteCircle/>
+                  <WhiteCircle/>
+                  <WhiteCircle/>
+                </figure>
+                <div>{cardNumberArray[cardNumberArray.length - 1]}</div>
+              </>
+            )}
+          </div>
           
           <div className='flex gap-7 font-semibold'>
             <div>
