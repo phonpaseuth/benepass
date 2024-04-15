@@ -17,11 +17,11 @@ function Content() {
       <h2 className='mb-7 text-xl leading-8'>Used for pre-tax purchases</h2>
       
       <div
-        className='p-6 text-white flex flex-col justify-between mb-3 drop-shadow-lg bg-cover max-w-[392px] h-[272px] rounded-[20px]'
+        className='p-6 text-white flex flex-col gap-7 justify-between mb-3 drop-shadow-lg bg-cover max-w-[392px] min-h-[272px] rounded-[20px]'
         style= {{backgroundImage: `url(${background})`}}
       >
         <div className='grid gap-4 sm:gap-6'>
-          <div className='flex justify-between items-center'>
+          <div className='flex flex-wrap justify-between items-center'>
             <img src={benepassLogo} alt="benepass Logo"/>
             <div className='py-1 px-3 bg-white font-semibold rounded-[40px] text-[#211C5C]'>
               Virtual
@@ -48,7 +48,7 @@ function Content() {
             )}
           </div>
           
-          <div className='flex gap-7 font-semibold'>
+          <div className='flex flex-wrap gap-7 font-semibold'>
             <div>
               <div className='text-xs text-[#D3D2DE]'>VALID THRU</div>
               <div className='text-lg leading-6'>8/28</div>
@@ -68,7 +68,7 @@ function Content() {
           </div>
         </div>
         
-        <div className='flex justify-between items-center'>
+        <div className='flex flex-wrap justify-between items-center'>
           <div className='text-lg leading-6'>ZIP 66062</div>
           <img src={visaLogo} alt='visa logo'/>
         </div>
